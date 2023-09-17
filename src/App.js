@@ -60,7 +60,7 @@ const App = () => {
 
     return (
         <div className={`mx-auto max-w-screen-md  items-center justify-center
-    mt-40 py-5 px-32 bg-gradient-to-br
+    mt-20 py-5 px-32 bg-gradient-to-br
     from-cyan-700 to-blue-700
     h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}>
             <Header setQuery={setQuery} />
