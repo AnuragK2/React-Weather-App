@@ -42,8 +42,6 @@ const Inputs = ({ setQuery, setUnits, units }) => {
     return (
         <div className="flex flex-row justify-center my-4">
             <div className="flex flex-row w-3/4 items-center justify-center space-x-3">
-                <SearchIcon className="text-white cursor-pointer transition ease-out hover:scale-125" onClick={handleclick} />
-                <LocationOnIcon className="text-white cursor-pointer transition ease-out hover:scale-125" onClick={handlelocation} />
                 <input
                     type="text"
                     value={city}
@@ -52,6 +50,8 @@ const Inputs = ({ setQuery, setUnits, units }) => {
                     onChange={(e) => setCity(e.currentTarget.value)}
                     onKeyPress={(e) => handlepress(e)}>
                 </input>
+                <SearchIcon className="text-white cursor-pointer transition ease-out hover:scale-125" onClick={handleclick} />
+                <LocationOnIcon className="text-white cursor-pointer transition ease-out hover:scale-125" onClick={handlelocation} />
             </div>
             <div className="flex flex-row w-1/4 items-center justify-center">
                 <button name="metric" className="text-white cursor-pointer font-normal text-sm hover:scale-125" onClick={handleunits}>°C</button>

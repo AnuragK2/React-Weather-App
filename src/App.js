@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './App.css'
 import Header from './components/Header'
 import Inputs from './components/Inputs'
 import TandLoc from './components/TandLoc'
@@ -49,19 +50,19 @@ const App = () => {
         fetchWeather();
     }, [query, units]);
 
-    const updatebackground = () => {
-        if (!weather) return 'from-cyan-700 to-blue-700'
-        const det = weather.details;
-        if (det === 'Clouds') return 'from-[#205375] to-[#413F42]'
-        if (det === 'Clear') return 'from-yellow-500 to-orange-700'
-        if (det === 'Haze') return 'from-[#316B83] to-[#748DA6]'
-        if (det === 'Rain') return 'from-[#332FD0] to-[#0E185F]'
-        if (det === 'Thunderstorm') return 'from-[#413F42] to-[#7F8487]'
-        if (det === 'Snow') return 'from-[#9D84B7] to-[#93B5C6]'
-    }
+    const formatBackground = () => {
+    if (!weather)
+      return 'from-cyan-700 to-blue-700'
+    const threshold = units === 'metric' ? 20 : 60
+    if (weather.temp <= threshold) return 'from-cyan-700 to-blue-700'
+    return 'from-yellow-700 to-orange-700'
+  }
 
     return (
-        <div className={`mx-auto max-w-screen-sm mt-2 py-5 px-20 bg-gradient-to-br ${updatebackground()} h-fit shadow-[-20px_20px_30px_0px_rgba(0,0,0,1)]`}>
+        <div className={`mx-auto max-w-screen-md  items-center justify-center
+    mt-40 py-5 px-32 bg-gradient-to-br
+    from-cyan-700 to-blue-700
+    h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}>
             <Header setQuery={setQuery} />
             <Inputs setQuery={setQuery} setUnits={setUnits} units={units} />
             {weather && (

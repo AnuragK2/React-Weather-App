@@ -4,23 +4,23 @@ const Header = ({ setQuery }) => {
     const cities = [
         {
             id: 1,
-            title: 'Mumbai'
+            title: 'Delhi'
         },
         {
             id: 2,
-            title: 'Kolkata'
+            title: 'Mumbai'
         },
         {
             id: 3,
-            title: 'Bhopal'
+            title: 'Bengaluru'
         },
         {
             id: 4,
-            title: 'Gwalior'
+            title: 'Kolkata'
         },
         {
             id: 5,
-            title: 'Bengaluru'
+            title: 'Chennai'
         },
     ]
 
