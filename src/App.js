@@ -13,7 +13,7 @@ import alanBtn from '@alan-ai/alan-sdk-web';
 
 
 const App = () => {
-    const [query, setQuery] = useState({ q: "Kolkata" });
+    const [query, setQuery] = useState({ q: "Delhi" });
     const [units, setUnits] = useState("metric");
     const [weather, setWeather] = useState(null);
 
